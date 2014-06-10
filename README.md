@@ -76,7 +76,7 @@ $ sheer serve
 
 And browse to http://localhost:7000
 
-You may also want to check out http://localhost:7000/api/v1/q/posts.json
+You may also want to check out http://localhost:7000/api/v1/q/jobs.json
 
 Enjoy!
 
