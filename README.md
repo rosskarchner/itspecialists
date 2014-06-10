@@ -55,3 +55,27 @@ sheer: error: too few arguments
 ```
 
 That means it's working!
+
+### Step 3: Explore the demo
+
+
+
+1) check out this here repo into some directory on your machine
+2) cd [checkout directory]
+3) do this
+
+```
+sheer index
+```
+
+
+
+```
+$ sheer serve
+```
+
+And browse to http://localhost:7000
+
+
+Enjoy!
+
