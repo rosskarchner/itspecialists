@@ -1,0 +1,5 @@
+{
+  "doc_type" : "jobs",
+  "size": 10,
+  "sort": "EndDate:desc"
+}

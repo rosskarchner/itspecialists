@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>Everyone is an IT Specialist</title>
+    </head>
+    <body>
+{% set jobs = queries.jobs.search_with_url_arguments() %}
+
+<img src="/flag.gif"/>
+<h1>Everyone is an IT Specialist</h1>
+
+<form>
+    <input name="q"/>
+    <input type="submit" value="search IT Specialists"/>
+</form>
+<br/>
+{% for job in jobs %}
+<article>
+<b><a href="{{job.ApplyOnlineURL}}">{{ job.JobTitle }}</a></b></br>
+{{job.SalaryMin}} - {{job.SalaryMax}}<br/>
+{{job.AgencySubElement}} / {{job.OrganizationName}}
+    </article>
+{% endfor %}
+
+<h2>Jump to a page</h2>
+{% for pagenum in range(1, jobs.pages+1) %}
+    {% if pagenum != jobs.current_page %} 
+    <a href="{{ jobs.url_for_page(pagenum) }}">{{pagenum}}</a> 
+    {% else %}
+    {{ pagenum }} 
+    {% endif %}
+{% endfor %}
+</body>
