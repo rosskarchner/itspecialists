@@ -1,6 +1,6 @@
 # We Are All IT Specialists
 
-This is a demo site, built with Sheer
+This is a demo site, built with [Sheer](https://github.com/cfpb/sheer)
 
 # What does it do?
 
