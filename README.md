@@ -25,7 +25,7 @@ http://virtualenvwrapper.readthedocs.org/en/latest/
 
 Check out the sheer Github project:
 ```
-$ git clone https://github.com/rosskarchner/sheer.git
+$ git clone https://github.com/cfpb/sheer.git
 ```
 create a virtualenv for sheer:
 ```
