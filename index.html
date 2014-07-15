@@ -26,7 +26,7 @@
 <h1>Everyone is an IT Specialist</h1>
 
 <form>
-    <input name="q" value="{{request.args.get('q')}}" />
+    <input name="q" value="{{request.args.get('q') or '' }}" />
     <input type="submit" value="search IT Specialists"/>
 </form>
 <br/>

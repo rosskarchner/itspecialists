@@ -11,6 +11,7 @@
             "format":"M/d/y"
         },
         "SalaryMin" : {"type" : "float"},
-        "SalaryMax" : {"type" : "float"}
+        "SalaryMax" : {"type" : "float"},
+        "OrganizationName" : {"type":"string", "index":"not_analyzed"}
     }
 }
