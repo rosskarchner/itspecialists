@@ -1,23 +1,40 @@
 <html>
     <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
         <title>Everyone is an IT Specialist</title>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     </head>
     <body>
+
+    <div class="container">
+
+      <div class="starter-template">
 {% set jobs = queries.jobs.search_with_url_arguments() %}
 
 <img src="/flag.gif"/>
 <h1>Everyone is an IT Specialist</h1>
 
 <form>
-    <input name="q"/>
+    <input name="q" value="{{request.args.get('q')}}" />
     <input type="submit" value="search IT Specialists"/>
 </form>
 <br/>
 {% for job in jobs %}
 <article>
 <b><a href="{{job.ApplyOnlineURL}}">{{ job.JobTitle }}</a></b></br>
-{{job.SalaryMin}} - {{job.SalaryMax}}<br/>
-{{job.AgencySubElement}} / {{job.OrganizationName}}
+{{"$%.0f"|format(job.SalaryMin)}} - {{"$%.0f"|format(job.SalaryMax)}}<br/>
+{{job.AgencySubElement}} ({{job.OrganizationName}})
     </article>
 {% endfor %}
 
@@ -29,4 +46,8 @@
     {{ pagenum }} 
     {% endif %}
 {% endfor %}
+      </div>
+
+    </div><!-- /.container -->
+
 </body>

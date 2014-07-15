@@ -5,6 +5,8 @@ import dateutil
 
 def process_job(jobdata):
     jobdata['_id'] = jobdata[u'DocumentID']
+    jobdata['SalaryMin'] = float(jobdata['SalaryMin'][1:].replace(',',''))
+    jobdata['SalaryMax'] = float(jobdata['SalaryMax'][1:].replace(',',''))
     return jobdata
 
 

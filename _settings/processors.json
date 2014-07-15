@@ -1,5 +1,6 @@
 {
   "jobs": {
-    "processor"           : "usajobs"
+    "processor"           : "usajobs",
+    "mappings" : "_defaults/jobs_mappings.json"
   }
 }
