@@ -23,10 +23,16 @@
 {% set jobs = queries.jobs.search_with_url_arguments() %}
 
 <img src="/flag.gif"/>
-<h1>Everyone is an IT Specialist</h1>
+<h1><a href="/">Everyone is an IT Specialist</a></h1>
 
 <form>
     <input name="q" value="{{request.args.get('q') or '' }}" />
+        <!-- can't really combine this with "q" search
+    <select name="filter_OrganizationName">
+        {% for org in queries.jobs.possible_values_for('OrganizationName') %}
+        <option value="{{org['term']}}">{{org['term']}}({{org['count']}}) </option>
+        {% endfor %}
+    </select>--></br>
     <input type="submit" value="search IT Specialists"/>
 </form>
 <br/>
@@ -34,7 +40,7 @@
 <article>
 <b><a href="{{job.ApplyOnlineURL}}">{{ job.JobTitle }}</a></b></br>
 {{"$%.0f"|format(job.SalaryMin)}} - {{"$%.0f"|format(job.SalaryMax)}}<br/>
-{{job.AgencySubElement}} ({{job.OrganizationName}})
+{{job.AgencySubElement}} (<a href="?filter_OrganizationName={{job.OrganizationName}}">{{job.OrganizationName}}</a>)
     </article>
 {% endfor %}
 
