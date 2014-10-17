@@ -1,5 +1,8 @@
 {
-  "doc_type" : "jobs",
-  "size": 10,
-  "sort": "EndDate"
+  "name": "Jobs",
+  "query": {
+    "doc_type": "jobs",
+    "size": 10,
+    "sort": "EndDate"
+  }
 }
